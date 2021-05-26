@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+<?php
+class viaje{
+            public $costeBillete;
+            public $destino;
+            public function viajeInf() {
+            echo 'Tu billete a ' . $this->destino . ' cuesta ' . $this->costeBillete . '. Este viaje dura ' . $this->duracion ;
+            }
+}
+class oferta extends viaje {
+        public $descuentoTienda;
+        public function ofrecer(){
+                    echo '.<br> !Felicidades¡ Al elegir este vuelo, te hacemos un descuento                         de un ' .$this->descuentoTienda ;
+    }
+}
+class fin{
+        public $compañia;
+    public function __destruct() {
+                echo '<br> !Gracias por confiar en ' . $this->compañia . '¡' ;
+        }
+}        
+
+
+
+
+$viaje=new viaje;
+$viaje->duracion='2 horas y 30 minutos';
+$viaje->costeBillete='200€';
+$viaje->destino='Alemania';
+$off=new oferta;
+$off->descuentoTienda='15% en todos los productor de la tienda del avion durante el viaje.';
+$vuelo=new fin;
+$vuelo->compañia='Airlines360';
+$viaje->viajeInf();
+$off->ofrecer();
+?>
+
+
+</body>
+</html>
